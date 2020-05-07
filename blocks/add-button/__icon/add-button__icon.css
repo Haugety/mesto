@@ -1,13 +1,13 @@
 .add-button__icon {
-  width: calc(22 / 1280 * 100vw);
-  height: calc(22 / 1280 * 100vw);
+  width: calc(22 / 150 * 100%);
+  height: calc(22 / 50 * 100%);
 }
 
 @media screen and (max-width: 767px) {
 
   .add-button__icon {
-    width: calc(16 / 320 * 100vw);
-    height: calc(16 / 320 * 100vw);
+    width: calc(16 / 282 * 100%);
+    height: calc(16 / 50 * 100%);
     overflow: visible;
   }
 

@@ -11,15 +11,20 @@
   align-items: center;
   justify-content: center;
   background-color: inherit;
-  position: absolute;
-  right: 0;
-  top: calc(35 / 1280 * 100vw);
+  align-self: center;
   outline: none;
+  margin: calc(35 / 880 * 100%) 0 auto auto;
 }
 
 .add-button:hover {
   cursor: pointer;
   opacity: 0.6;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.add-button:not(:hover) {
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
 }
 
 @media screen and (max-width: 767px) {
@@ -29,7 +34,7 @@
     height: 50px;
     top: 0;
     right: 0;
-    position: relative;
+    margin: 0;
   }
 
 }

@@ -11,13 +11,19 @@
   box-sizing: border-box;
   background-color: inherit;
   position: relative;
-  top: calc(17 / 1280 * 100vw);
+  margin-top: calc(17 / 1280 * 100vw);
   outline: none;
 }
 
 .edit-button:hover {
   cursor: pointer;
   opacity: 0.6;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.edit-button:not(:hover) {
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
 }
 
 @media screen and (max-width: 767px) {

@@ -4,6 +4,7 @@
   line-height: 1.22;
   color: #fff;
   margin: 0;
+  word-wrap: break-word;
 }
 
 @media screen and (max-width: 767px) {
@@ -13,7 +14,6 @@
     font-size: calc(14 / 320 * 100vw);
     line-height: 1.21;
     text-align: center;
-    word-wrap: break-word;
   }
 
 }

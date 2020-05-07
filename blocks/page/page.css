@@ -1,7 +1,6 @@
 .page {
-  width: 100vw;
   min-width: 300px;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
   padding: calc(45 / 1280 * 100%) calc(200 / 1280 * 100%) calc(60 / 1280 * 100%);
   box-sizing: border-box;
   background-color: #000;

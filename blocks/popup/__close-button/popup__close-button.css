@@ -14,6 +14,12 @@
 .popup__close-button:hover {
   cursor: pointer;
   opacity: 0.6;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.popup__close-button:not(:hover) {
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
 }
 
 @media screen and (max-width: 767px) {
