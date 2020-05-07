@@ -1,0 +1,9 @@
+.cards__row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 0 0 10px 10px;
+  padding: calc(31 / 282 * 100%) calc(21 / 282 * 100%);
+}

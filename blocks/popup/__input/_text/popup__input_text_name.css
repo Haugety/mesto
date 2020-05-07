@@ -1,0 +1,11 @@
+.popup__input_text_name {
+  margin-bottom: calc(30 / 1280 * 100vw);
+}
+
+@media screen and (max-width: 767px) {
+
+  .popup__input:first-of-type {
+    margin-bottom: 28px;
+  }
+
+}

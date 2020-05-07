@@ -1,0 +1,32 @@
+@import url(./__icon/edit-button__icon.css);
+
+.edit-button {
+  width: calc(24 / 1280 * 100vw);
+  height: calc(24 / 1280 * 100vw);
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #fff;
+  box-sizing: border-box;
+  background-color: inherit;
+  position: relative;
+  top: calc(17 / 1280 * 100vw);
+  outline: none;
+}
+
+.edit-button:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 767px) {
+
+  .edit-button {
+    width: calc(18 / 320 * 100vw);
+    height: calc(18 / 320 * 100vw);
+    top: calc(19 / 320 * 100vw);
+    margin-left: calc(9 / 282 * 100%);
+  }
+
+}

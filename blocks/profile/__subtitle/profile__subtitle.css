@@ -1,0 +1,19 @@
+.profile__subtitle {
+  max-width: calc(318 / 336 * 100%);
+  font-size: calc(18 / 1280 * 100vw);
+  line-height: 1.22;
+  color: #fff;
+  margin: 0;
+}
+
+@media screen and (max-width: 767px) {
+
+  .profile__subtitle {
+    max-width: 100%;
+    font-size: calc(14 / 320 * 100vw);
+    line-height: 1.21;
+    text-align: center;
+    word-wrap: break-word;
+  }
+
+}
