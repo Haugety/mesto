@@ -29,7 +29,17 @@
   .popup__save-button {
     width: 100%;
     height: 40px;
-    font-size: 12px;
+    font-size: 14px;
+  }
+
+}
+
+@media screen and (max-width: 399px) {
+
+  .popup__save-button {
+    width: 100%;
+    height: 40px;
+    font-size: 14px;
   }
 
 }

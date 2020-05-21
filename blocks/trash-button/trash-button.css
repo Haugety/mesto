@@ -1,29 +1,33 @@
-.like-button {
-  width: 21px;
+.trash-button {
+  width: 18px;
   height: 19px;
   border: none;
   padding: 0;
-  background-color: inherit;
+  background-color: rgba(255, 255, 255, 0);
   outline: none;
-  background-image: url(../../images/deactivatedLike.svg);
+  position: absolute;
+  z-index: 2;
+  top: 18px;
+  right: 15px;
+  background-image: url(../../images/trash-button.svg);
   background-size: 100% 100%;
 }
 
-.like-button:hover {
+.trash-button:hover {
   cursor: pointer;
   opacity: 0.6;
   transition: opacity 0.2s ease-in-out;
 }
 
-.like-button:not(:hover) {
+.trash-button:not(:hover) {
   opacity: 1;
   transition: opacity 0.2s ease-in-out;
 }
 
 @media screen and (min-width: 1281px) {
 
-  .like-button {
-    width: calc(21 / 1280 * 100vw);
+  .trash-button {
+    width: calc(18 / 1280 * 100vw);
     height: calc(19 / 1280 * 100vw);
   }
 
@@ -31,8 +35,8 @@
 
 @media screen and (max-width: 767px) {
 
-  .like-button {
-    width: calc(28 / 768 * 100vw);
+  .trash-button {
+    width: calc(25 / 768 * 100vw);
     height: calc(26 / 768 * 100vw);
   }
 
@@ -40,8 +44,8 @@
 
 @media screen and (max-width: 399px) {
 
-  .like-button {
-    width: calc(21 / 320 * 100vw);
+  .trash-button {
+    width: calc(18 / 320 * 100vw);
     height: calc(19 / 320 * 100vw);
   }
 

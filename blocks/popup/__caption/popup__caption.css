@@ -1,0 +1,12 @@
+.popup__caption {
+  max-width: 75vw;
+  font-size: 12px;
+  line-height: 1.25;
+  color: #fff;
+}
+
+@media screen and (min-width: 1281px) {
+  .popup__caption {
+    font-size: calc(12 / 1280 * 100vw);
+  }
+}
