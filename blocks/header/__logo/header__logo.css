@@ -3,6 +3,15 @@
   margin-bottom: calc(40 / 880 * 100%);
 }
 
+@media screen and (min-width: 1281px) {
+
+  .header__logo {
+    width: 142px;
+    margin-bottom: 40px;
+  }
+
+}
+
 @media screen and (max-width: 767px) {
   .header__logo {
     width: calc(104 / 320 * 100%);

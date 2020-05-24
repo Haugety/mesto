@@ -27,6 +27,16 @@
   transition: opacity 0.2s ease-in-out;
 }
 
+@media screen and (min-width: 1281px) {
+
+  .add-button {
+    width: 150px;
+    height: 50px;
+    margin: 35px 0 auto auto;
+  }
+
+}
+
 @media screen and (max-width: 767px) {
 
   .add-button {

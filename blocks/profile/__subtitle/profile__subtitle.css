@@ -5,6 +5,18 @@
   color: #fff;
   margin: 0;
   word-wrap: break-word;
+  position: relative;
+  bottom: calc(10 / 1280 * 100vw);
+}
+
+@media screen and (min-width: 1281px) {
+
+  .profile__subtitle {
+    max-width: 318px;
+    font-size: 18px;
+    bottom: 10px;
+  }
+
 }
 
 @media screen and (max-width: 767px) {
@@ -14,6 +26,7 @@
     font-size: calc(14 / 320 * 100vw);
     line-height: 1.21;
     text-align: center;
+    bottom: auto;
   }
 
 }

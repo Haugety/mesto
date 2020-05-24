@@ -3,6 +3,15 @@
   height: calc(22 / 50 * 100%);
 }
 
+@media screen and (min-width: 1281px) {
+
+  .add-button__icon {
+    width: 22px;
+    height: 22px;
+  }
+
+}
+
 @media screen and (max-width: 767px) {
 
   .add-button__icon {

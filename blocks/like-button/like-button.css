@@ -20,15 +20,6 @@
   transition: opacity 0.2s ease-in-out;
 }
 
-@media screen and (min-width: 1281px) {
-
-  .like-button {
-    width: calc(21 / 1280 * 100vw);
-    height: calc(19 / 1280 * 100vw);
-  }
-
-}
-
 @media screen and (max-width: 767px) {
 
   .like-button {

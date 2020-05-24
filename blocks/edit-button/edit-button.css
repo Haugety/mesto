@@ -11,7 +11,7 @@
   box-sizing: border-box;
   background-color: inherit;
   position: relative;
-  margin-top: calc(17 / 1280 * 100vw);
+  margin-top: calc(19 / 1280 * 100vw);
   outline: none;
 }
 
@@ -26,12 +26,22 @@
   transition: opacity 0.2s ease-in-out;
 }
 
+@media screen and (min-width: 1281px) {
+
+  .edit-button {
+    width: 24px;
+    height: 24px;
+    margin-top: 19px;
+  }
+
+}
+
 @media screen and (max-width: 767px) {
 
   .edit-button {
     width: calc(18 / 320 * 100vw);
     height: calc(18 / 320 * 100vw);
-    top: calc(19 / 320 * 100vw);
+    margin-top: calc(9 / 320 * 100vw);
     margin-left: calc(9 / 282 * 100%);
   }
 

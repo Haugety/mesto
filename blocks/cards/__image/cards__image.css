@@ -8,6 +8,14 @@
   cursor: pointer;
 }
 
+@media screen and (min-width: 1281px) {
+
+  .cards__image {
+    height: 282px;
+  }
+
+}
+
 @media screen and (max-width: 767px) {
 
   .cards__image {

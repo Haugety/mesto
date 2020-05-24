@@ -8,12 +8,20 @@
   word-wrap: break-word;
 }
 
+@media screen and (min-width: 1281px) {
+
+  .profile__title {
+    max-width: 295px;
+    font-size: 42px;
+  }
+
+}
+
 @media screen and (max-width: 767px) {
 
   .profile__title {
     max-width: calc(200 / 282 * 100%);
     font-size: calc(27 / 320 * 100vw);
-    line-height: 2.07;
     text-align: center;
   }
 

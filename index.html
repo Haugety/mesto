@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="./pages/index.css">
 </head>
 
-<body>
+<body class="body">
 
   <div class="page">
 
@@ -48,7 +48,7 @@
       <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
     </footer>
 
-    <section class="popup">
+    <section id="editPopup" class="popup">
       <form action="url" class="popup__container">
         <button type="button" class="popup__close-button"></button>
         <h3 class="popup__title">Редактировать профиль</h3>
@@ -58,7 +58,7 @@
       </form>
     </section>
 
-    <section class="popup">
+    <section id="newItemPopup" class="popup">
       <form action="url" class="popup__container">
         <button type="button" class="popup__close-button"></button>
         <h3 class="popup__title">Новое место</h3>
@@ -68,7 +68,7 @@
       </form>
     </section>
 
-    <section class="popup">
+    <section id="imagePopup" class="popup">
       <figure class="popup__image-container">
         <img class="popup__image">
         <figcaption class="popup__caption"></figcaption>

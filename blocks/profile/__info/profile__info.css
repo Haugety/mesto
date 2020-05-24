@@ -5,13 +5,22 @@
   flex-direction: column;
 }
 
+@media screen and (min-width: 1281px) {
+
+  .profile__info {
+    width: 336px;
+    margin-top: 18px;
+  }
+
+}
+
 @media screen and (max-width: 767px) {
 
   .profile__info {
     width: 100%;
     align-items: center;
     margin-top: 0;
-    margin-bottom: calc(36 / 282 * 100%);
+    margin-bottom: calc(32 / 282 * 100%);
   }
 
 }

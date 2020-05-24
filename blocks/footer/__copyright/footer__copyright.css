@@ -6,6 +6,14 @@
   margin: 0;
 }
 
+@media screen and (min-width: 1281px) {
+
+  .footer__copyright {
+    font-size: 18px;
+  }
+
+}
+
 @media screen and (max-width: 767px) {
 
   .footer__copyright {

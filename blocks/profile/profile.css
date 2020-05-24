@@ -4,12 +4,21 @@
 @import url(./__title/profile__title.css);
 @import url(./__subtitle/profile__subtitle.css);
 
+
 .profile {
   width: inherit;
   display: flex;
   flex-direction: row;
   margin-bottom: calc(51 / 880 * 100%);
   position: relative;
+}
+
+@media screen and (min-width: 1281px) {
+
+  .profile {
+    margin-bottom: 51px;
+  }
+
 }
 
 @media screen and (max-width: 767px) {

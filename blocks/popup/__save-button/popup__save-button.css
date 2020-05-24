@@ -24,6 +24,15 @@
   transition: background-color 0.2s ease-in-out;
 }
 
+@media screen and (min-width: 1281px) {
+
+  .popup__save-button {
+    height: 50px;
+    font-size: 18px;
+  }
+
+}
+
 @media screen and (max-width: 767px) {
 
   .popup__save-button {
