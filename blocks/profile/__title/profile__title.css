@@ -1,17 +1,19 @@
 .profile__title {
-  max-width: calc(295 / 336 * 100%);
+  max-width: calc(520 / 1280 * 100vw);
   font-weight: 500;
   font-size: calc(42 / 1280 * 100vw);
   line-height: 1.33;
   color: #fff;
   margin: 0;
-  word-wrap: break-word;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 @media screen and (min-width: 1281px) {
 
   .profile__title {
-    max-width: 295px;
+    max-width: 520px;
     font-size: 42px;
   }
 
@@ -20,7 +22,7 @@
 @media screen and (max-width: 767px) {
 
   .profile__title {
-    max-width: calc(200 / 282 * 100%);
+    max-width: calc(240 / 282 * 100%);
     font-size: calc(27 / 320 * 100vw);
     text-align: center;
   }
