@@ -45,10 +45,6 @@ const newItemFormElement = newItemPopup.querySelector('.popup__container');
 const editButton = document.querySelector('.edit-button');
 const newItemButton = document.querySelector('.add-button');
 
-const closeButtonEditPopup = editPopup.querySelector('.popup__close-button');
-const closeButtonNewItemPopup = newItemPopup.querySelector('.popup__close-button');
-const closeButtonImagePopup = imagePopup.querySelector('.popup__close-button');
-
 const nameProfile = document.querySelector('.profile__title');
 const descriptionProfile = document.querySelector('.profile__subtitle');
 
@@ -65,11 +61,12 @@ const formReset = (popupElement) => {
 };
 
 const popupClose = (popupElement) => {
+  const closeButton = popupElement.querySelector('.popup__close-button');
+
   popupElement.classList.remove('popup_opened');
 
-  document.removeEventListener('keydown', (evt) => {
-    closeKeyHandler(evt, popupElement);
-  });
+  closeButton.removeEventListener('click', closeEventOnButton);
+  document.removeEventListener('keydown', closeEventOnEscape);
   popupElement.removeEventListener('mousedown', popupCloseIfClickOnOverlay);
   formReset(popupElement);
 };
@@ -87,10 +84,15 @@ const popupCloseIfClickOnOverlay = (evt) => {
 };
 
 const popupOpen = (popupElement) => {
+  const closeButton = popupElement.querySelector('.popup__close-button');
+
   popupElement.classList.add('popup_opened');
   enableValidation(validationOptions);
 
-  document.addEventListener('keydown', (evt) => {
+  closeButton.addEventListener('click', closeEventOnButton = () => {
+    popupClose(popupElement);
+  });
+  document.addEventListener('keydown', closeEventOnEscape = (evt) => {
     closeKeyHandler(evt, popupElement);
   });
   popupElement.addEventListener('mousedown', popupCloseIfClickOnOverlay);
@@ -175,12 +177,6 @@ editButton.addEventListener('click', () => {
 newItemButton.addEventListener('click', () => {
   popupOpen(newItemPopup);
 });
-
-closeButtonEditPopup.addEventListener('click', () => { popupClose(editPopup); });
-closeButtonNewItemPopup.addEventListener('click', () => {
-  popupClose(newItemPopup);
-});
-closeButtonImagePopup.addEventListener('click', () => { popupClose(imagePopup); });
 
 editFormElement.addEventListener('submit', editFormSubmitHandler);
 newItemFormElement.addEventListener('submit', newItemFormSubmitHandler);
