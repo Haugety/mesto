@@ -64,6 +64,16 @@ const formReset = (popupElement) => {
   }
 };
 
+const popupClose = (popupElement) => {
+  popupElement.classList.remove('popup_opened');
+
+  document.removeEventListener('keydown', (evt) => {
+    closeKeyHandler(evt, popupElement);
+  });
+  popupElement.removeEventListener('mousedown', popupCloseIfClickOnOverlay);
+  formReset(popupElement);
+};
+
 const closeKeyHandler = (evt, popupElement) => {
   if (evt.key === 'Escape') {
     popupClose(popupElement);
@@ -86,15 +96,7 @@ const popupOpen = (popupElement) => {
   popupElement.addEventListener('mousedown', popupCloseIfClickOnOverlay);
 };
 
-const popupClose = (popupElement) => {
-  popupElement.classList.remove('popup_opened');
 
-  document.removeEventListener('keydown', (evt) => {
-    closeKeyHandler(evt, popupElement);
-  });
-  popupElement.removeEventListener('mousedown', popupCloseIfClickOnOverlay);
-  formReset(popupElement);
-};
 
 const editFormSubmitHandler = (evt) => {
   evt.preventDefault();
@@ -105,12 +107,12 @@ const editFormSubmitHandler = (evt) => {
   popupClose(editPopup);
 };
 
-const likeOnCard = () => {
-  event.target.classList.toggle('like-button_active');
+const likeOnCard = (evt) => {
+  evt.target.classList.toggle('like-button_active');
 };
 
-const deleteCard = () => {
-  event.target.parentElement.remove();
+const deleteCard = (evt) => {
+  evt.target.parentElement.remove();
 };
 
 const openImagePopup = (name, link) => {
