@@ -1,10 +1,10 @@
 .popup__close-button {
-  width: calc(41 / 1280 * 100vw);
-  height: calc(41 / 1280 * 100vw);
+  width: 41px;
+  height: 41px;
   transform: rotate(45deg);
   position: absolute;
-  top: calc(37 / 1280 * 100vw * -1);
-  right: calc(37 / 1280 * 100vw * -1);
+  top: -37px;
+  right: -37px;
   padding: 0;
   outline: none;
   border: none;
@@ -23,18 +23,7 @@
   opacity: 1;
   transition: opacity 0.2s ease-in-out;
 }
-
-@media screen and (min-width: 1281px) {
-
-  .popup__close-button {
-    width: 41px;
-    height: 41px;
-    top: -37px;
-    right: -37px;
-  }
-
-}
-
+/*
 @media screen and (max-width: 767px) {
 
   .popup__close-button {
@@ -44,9 +33,9 @@
     right: -22px;
   }
 
-}
+} */
 
-@media screen and (max-width: 399px) {
+@media screen and (max-width: 767px) {
 
   .popup__close-button {
     width: 30px;

@@ -2,11 +2,17 @@
 @import url(./__close-button/popup__close-button.css);
 @import url(./__title/popup__title.css);
 @import url(./__input/popup__input.css);
+@import url(./__set/popup__set.css);
+@import url(./__field/popup__field.css);
+@import url(./__input-error/popup__input-error.css);
+@import url(./__input-error/_active/popup__input-error_active.css);
 @import url(./__input/_text/popup__input_text_name.css);
 @import url(./__input/_text/popup__input_text_description.css);
 @import url(./__input/_text/popup__input_text_place.css);
 @import url(./__input/_text/popup__input_text_link.css);
+@import url(./__input/_type/popup__input_type_error.css);
 @import url(./__save-button/popup__save-button.css);
+@import url(./__save-button/_inactive/popup__save-button_inactive.css);
 @import url(./__image-container/popup__image-container.css);
 @import url(./__image/popup__image.css);
 @import url(./__caption/popup__caption.css);

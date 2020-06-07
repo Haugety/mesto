@@ -1,11 +1,3 @@
 .popup__input_text_place {
-  margin-bottom: calc(30 / 1280 * 100vw);
-}
-
-@media screen and (min-width: 1281px) {
-
-  .popup__input_text_place {
-    margin-bottom: 30px;
-  }
 
 }

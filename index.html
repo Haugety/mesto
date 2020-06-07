@@ -49,22 +49,38 @@
     </footer>
 
     <section id="editPopup" class="popup">
-      <form action="url" class="popup__container">
+      <form action="url" class="popup__container" novalidate>
         <button type="button" class="popup__close-button"></button>
         <h3 class="popup__title">Редактировать профиль</h3>
-        <input type="text" placeholder = "Введите имя" class="popup__input popup__input_text_name">
-        <input type="text" placeholder = "Введите описание" class="popup__input popup__input_text_description">
-        <button type="submit" class="popup__save-button">Сохранить</button>
+        <fieldset class="popup__set">
+          <label class="popup__field">
+            <input type="text" placeholder="Введите имя" autocomplete="off" class="popup__input popup__input_text_name" id="name-input" minlength="2" maxlength="40" required pattern="[A-Za-zА-ЯЁа-яё -]{1,}">
+            <span class="popup__input-error" id="name-input-error"></span>
+          </label>
+          <label class="popup__field">
+            <input type="text" placeholder="Введите описание" autocomplete="off" class="popup__input popup__input_text_description" id="description-input" minlength="2" maxlength="200" required>
+            <span class="popup__input-error" id="description-input-error"></span>
+          </label>
+          <button type="submit" class="popup__save-button" disabled>Сохранить</button>
+        </fieldset>
       </form>
     </section>
 
-    <section id="newItemPopup" class="popup">
-      <form action="url" class="popup__container">
+    <section id="newItemPopup" class="popup" >
+      <form action="url" class="popup__container" novalidate>
         <button type="button" class="popup__close-button"></button>
         <h3 class="popup__title">Новое место</h3>
-        <input type="text" placeholder = "Название" class="popup__input popup__input_text_place">
-        <input type="text" placeholder = "Ссылка на картинку" class="popup__input popup__input_text_link">
-        <button type="submit" class="popup__save-button">Создать</button>
+        <fieldset class="popup__set">
+          <label class="popup__field">
+            <input type="text" placeholder="Название" autocomplete="off" class="popup__input popup__input_text_place" id="place-input" minlength="1" maxlength="30" required>
+            <span class="popup__input-error" id="place-input-error"></span>
+          </label>
+          <label class="popup__field">
+            <input type="url" placeholder="Ссылка на картинку" autocomplete="off" class="popup__input popup__input_text_link" id="link-input" required>
+            <span class="popup__input-error" id="link-input-error"></span>
+          </label>
+          <button type="submit" class="popup__save-button" disabled>Создать</button>
+        </fieldset>
       </form>
     </section>
 
@@ -90,7 +106,8 @@
     </li>
   </template>
 
-  <script src="scripts/script.js"></script>
+  <script src="scripts/validation.js"></script>
+  <script src="scripts/index.js"></script>
 
 </body>
 
