@@ -11,14 +11,14 @@ class FormValidator {
   _showInputError(inputElement, errorMessage) {
     this._errorElement = this._formElement.querySelector(`#${inputElement.id}-error`);
     inputElement.classList.add(this._options.inputErrorClass);
-    this._errorElement.classList.add(this._options.errorClass);
+    this._errorElement.classList.add(this._options.errorClassActive);
     this._errorElement.textContent = errorMessage;
   }
 
   _hideInputError(inputElement) {
     this._errorElement = this._formElement.querySelector(`#${inputElement.id}-error`);
     inputElement.classList.remove(this._options.inputErrorClass);
-    this._errorElement.classList.remove(this._options.errorClass);
+    this._errorElement.classList.remove(this._options.errorClassActive);
     this._errorElement.textContent = '';
   }
 
@@ -62,7 +62,7 @@ class FormValidator {
   }
 
   resetErrors() {
-    this._errorList = Array.from(this._formElement.querySelectorAll('.popup__input-error'));
+    this._errorList = Array.from(this._formElement.querySelectorAll(this._options.errorSelector));
     this._errorList.forEach((errorElement) => {
       errorElement.textContent = '';
     });
