@@ -18,15 +18,17 @@ const popupsCloseButtonList = Array.from(document.querySelectorAll('.popup__clos
 const nameInput = editPopup.querySelector('.popup__input_text_name');
 const descriptionInput = editPopup.querySelector('.popup__input_text_description');
 
+const placeInput = newItemPopup.querySelector('.popup__input_text_place');
+const linkInput = newItemPopup.querySelector('.popup__input_text_link');
+
 const editFormValidation = new FormValidator(validationOptions, editFormElement);
 const newItemFormValidation = new FormValidator(validationOptions, newItemFormElement);
 editFormValidation.enableValidation();
 newItemFormValidation.enableValidation();
 
 
-function formReset(formElement) {
-  editFormValidation.resetErrors();
-  newItemFormValidation.resetErrors();
+function formReset(formElement, formValidator) {
+  formValidator.resetErrors();
   formElement.reset();
 }
 
@@ -44,9 +46,6 @@ function closeKeyHandler(evt) {
 
 function popupClose(popupElement) {
   popupElement.classList.remove('popup_opened');
-  if (popupElement.querySelector('form') !== null) {
-    formReset(popupElement.querySelector('.popup__container'));
-  }
   document.removeEventListener('keydown', closeKeyHandler);
 }
 
@@ -57,23 +56,20 @@ function popupOpen(popupElement) {
 
 function createCard(name, link, cardSelector) {
   const card = new Card(name, link, cardSelector, popupOpen);
-  return card;
+  return card.returnCard();
 }
 
 function addCardInDom(name, link) {
-  cardsList.prepend(createCard(name, link, 'cardsElement').returnCard());
+  cardsList.prepend(createCard(name, link, 'cardsElement'));
 }
 
 function renderDefaultCards(cardsObject) {
   cardsObject.forEach(function (item) {
-    cardsList.append(createCard(item.name, item.link, 'cardsElement').returnCard());
+    cardsList.append(createCard(item.name, item.link, 'cardsElement'));
   });
 }
 
 function newItemFormSubmitHandler(evt) {
-  const placeInput = document.querySelector('.popup__input_text_place');
-  const linkInput = document.querySelector('.popup__input_text_link');
-
   evt.preventDefault();
 
   addCardInDom(placeInput.value, linkInput.value);
@@ -94,11 +90,13 @@ renderDefaultCards(initialCards);
 
 
 document.querySelector('.edit-button').addEventListener('click', () => {
+  formReset(editFormElement, editFormValidation);
   nameInput.value = nameProfile.textContent;
   descriptionInput.value = descriptionProfile.textContent;
   popupOpen(editPopup);
 });
 document.querySelector('.add-button').addEventListener('click', () => {
+  formReset(newItemFormElement, newItemFormValidation);
   popupOpen(newItemPopup);
 });
 
