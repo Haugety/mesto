@@ -1,12 +1,10 @@
-import { popupOpen } from './utils.js';
-
-
 class Card {
 
-  constructor(name, link, cardSelector) {
+  constructor(name, link, cardSelector, popupOpenFunction) {
     this._cardSelector = cardSelector;
     this._name = name;
     this._link = link;
+    this._popupOpenFunction = popupOpenFunction;
   }
 
   _createCard() {
@@ -33,13 +31,13 @@ class Card {
 
   _deleteCard() {
     this._card.remove();
-    this._card = '';
+    this._card = null;
   }
 
   _openImagePopup() {
     document.querySelector('.popup__image').src = this._link;
     document.querySelector('.popup__caption').textContent = this._name;
-    popupOpen(document.querySelector('#imagePopup'));
+    this._popupOpenFunction(document.querySelector('#imagePopup'));
   }
 
   returnCard() {
