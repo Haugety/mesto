@@ -4,9 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="./images/favicon-32x32.png" type="image/png">
   <title>Mesto Russia</title>
-  <link rel="stylesheet" href="./pages/index.css">
 </head>
 
 <body class="body">
@@ -54,11 +52,11 @@
         <h3 class="popup__title">Редактировать профиль</h3>
         <fieldset class="popup__set">
           <label class="popup__field">
-            <input type="text" placeholder="Введите имя" autocomplete="off" class="popup__input popup__input_text_name" id="name-input" minlength="2" maxlength="40" required pattern="[A-Za-zА-ЯЁа-яё -]{1,}">
+            <input type="text" placeholder="Введите имя" autocomplete="off" class="popup__input popup__input_text_name" id="name-input" name="nameInput" minlength="2" maxlength="40" required pattern="[A-Za-zА-ЯЁа-яё -]{1,}">
             <span class="popup__input-error" id="name-input-error"></span>
           </label>
           <label class="popup__field">
-            <input type="text" placeholder="Введите описание" autocomplete="off" class="popup__input popup__input_text_description" id="description-input" minlength="2" maxlength="200" required>
+            <input type="text" placeholder="Введите описание" autocomplete="off" class="popup__input popup__input_text_description" id="description-input" name="descriptionInput" minlength="2" maxlength="200" required>
             <span class="popup__input-error" id="description-input-error"></span>
           </label>
           <button type="submit" class="popup__save-button popup__save-button_inactive" disabled>Сохранить</button>
@@ -72,11 +70,11 @@
         <h3 class="popup__title">Новое место</h3>
         <fieldset class="popup__set">
           <label class="popup__field">
-            <input type="text" placeholder="Название" autocomplete="off" class="popup__input popup__input_text_place" id="place-input" minlength="1" maxlength="30" required>
+            <input type="text" placeholder="Название" autocomplete="off" class="popup__input popup__input_text_place" id="place-input" name="placeInput" minlength="1" maxlength="30" required>
             <span class="popup__input-error" id="place-input-error"></span>
           </label>
           <label class="popup__field">
-            <input type="url" placeholder="Ссылка на картинку" autocomplete="off" class="popup__input popup__input_text_link" id="link-input" required>
+            <input type="url" placeholder="Ссылка на картинку" autocomplete="off" class="popup__input popup__input_text_link" id="link-input" name="linkInput" required>
             <span class="popup__input-error" id="link-input-error"></span>
           </label>
           <button type="submit" class="popup__save-button" disabled>Создать</button>
@@ -105,8 +103,6 @@
       </div>
     </li>
   </template>
-
-  <script type="module" src="scripts/index.js"></script>
 
 </body>
 

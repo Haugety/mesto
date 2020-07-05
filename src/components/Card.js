@@ -1,14 +1,14 @@
-class Card {
+export class Card {
 
-  constructor(name, link, cardSelector, popupOpenFunction) {
+  constructor(data, cardSelector, handleCardClick) {
     this._cardSelector = cardSelector;
-    this._name = name;
-    this._link = link;
-    this._popupOpenFunction = popupOpenFunction;
+    this._name = data.name;
+    this._link = data.link;
+    this._handleCardClick = handleCardClick;
   }
 
   _createCard() {
-    this._cardTemplate = document.querySelector(`#${this._cardSelector}`).content;
+    this._cardTemplate = document.querySelector(`${this._cardSelector}`).content;
     this._card = this._cardTemplate.querySelector('.cards__element').cloneNode(true);
 
     this._card.querySelector('.cards__image').src = this._link;
@@ -22,7 +22,7 @@ class Card {
   _setEventListeners() {
     this._card.querySelector('.like-button').addEventListener('click', () => this._likeOnCard());
     this._card.querySelector('.trash-button').addEventListener('click', () => this._deleteCard());
-    this._card.querySelector('.cards__image').addEventListener('click', () => this._openImagePopup());
+    this._card.querySelector('.cards__image').addEventListener('click', () => this._handleCardClick(this._name, this._link));
   }
 
   _likeOnCard() {
@@ -34,17 +34,8 @@ class Card {
     this._card = null;
   }
 
-  _openImagePopup() {
-    document.querySelector('.popup__image').src = this._link;
-    document.querySelector('.popup__caption').textContent = this._name;
-    this._popupOpenFunction(document.querySelector('#imagePopup'));
-  }
-
   returnCard() {
     return this._createCard();
   }
 
 }
-
-
-export { Card };

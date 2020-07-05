@@ -1,4 +1,4 @@
-const initialCards = [
+export const initialCards = [
   {
       name: 'Архыз',
       link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
@@ -25,7 +25,7 @@ const initialCards = [
   }
 ];
 
-const validationOptions = {
+export const validationOptions = {
   formSelector: '.popup__container',
   fieldsetSelector: '.popup__set',
   inputSelector: '.popup__input',
@@ -35,6 +35,3 @@ const validationOptions = {
   inputErrorClass: 'popup__input_type_error',
   errorClassActive: 'popup__input-error_active'
 };
-
-
-export { initialCards, validationOptions };
