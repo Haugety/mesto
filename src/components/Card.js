@@ -10,8 +10,11 @@ export class Card {
   _createCard() {
     this._cardTemplate = document.querySelector(`${this._cardSelector}`).content;
     this._card = this._cardTemplate.querySelector('.cards__element').cloneNode(true);
+    this._image = this._card.querySelector('.cards__image');
 
-    this._card.querySelector('.cards__image').src = this._link;
+    this._image.src = this._link;
+    this._image.alt = this._name;
+
     this._card.querySelector('.cards__title').textContent = this._name;
 
     this._setEventListeners();

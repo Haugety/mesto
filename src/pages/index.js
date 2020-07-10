@@ -3,10 +3,10 @@ import './index.css';
 import { Card } from '../components/Card.js';
 import { FormValidator } from '../components/FormValidator.js';
 import { Section } from '../components/Section.js';
-import { PopupWithImage } from '../components/PicturePopup.js';
-import { PopupWithForm } from '../components/FormPopup.js';
+import { PopupWithImage } from '../components/PopupWithImage.js';
+import { PopupWithForm } from '../components/PopupWithForm.js';
 import { UserInfo } from '../components/UserInfo.js';
-import { initialCards, validationOptions } from '../components/data.js';
+import { initialCards, validationOptions } from '../utils/data.js';
 
 
 
@@ -15,6 +15,8 @@ const newItemPopup = document.querySelector('#newItemPopup');
 const imagePopup = document.querySelector('#imagePopup');
 const editFormElement = editPopup.querySelector('.popup__container');
 const newItemFormElement = newItemPopup.querySelector('.popup__container');
+const editButton = document.querySelector('.edit-button');
+const addButton = document.querySelector('.add-button');
 
 
 
@@ -74,13 +76,13 @@ function newItemFormSubmitHandler({ placeInput: name, linkInput: link }) {
 
 
 
-document.querySelector('.edit-button').addEventListener('click', () => {
+editButton.addEventListener('click', () => {
   editFormValidation.resetErrors();
   editPopupClass.open();
   editPopup.querySelector('.popup__input_text_name').value = userInfo.getUserInfo().name;
   editPopup.querySelector('.popup__input_text_description').value = userInfo.getUserInfo().description;
 });
-document.querySelector('.add-button').addEventListener('click', () => {
+addButton.addEventListener('click', () => {
   newItemFormValidation.resetErrors();
   newItemPopupClass.open();
 });
