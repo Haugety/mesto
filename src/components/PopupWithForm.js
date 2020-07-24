@@ -4,6 +4,7 @@ export class PopupWithForm extends Popup {
   constructor(popupSelector, formSubmit) {
     super(popupSelector);
     this._form = this._popupSelector.querySelector('.popup__container');
+    this._saveButton = this._form.querySelector('.popup__save-button');
     this._formSubmit = formSubmit;
   }
 
@@ -22,8 +23,8 @@ export class PopupWithForm extends Popup {
     super.setEventListeners();
     this._form.addEventListener('submit', (evt) => {
       evt.preventDefault();
-      this._formSubmit(this._getInputValues());
-      this.close();
+      this._saveButton.textContent = 'Сохранение...';
+      this._formSubmit(this._getInputValues(), this._saveButton);
     });
   }
 

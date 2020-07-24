@@ -1,6 +1,7 @@
 @import url(./__element/cards__element.css);
 @import url(./__image/cards__image.css);
 @import url(./__row/cards__row.css);
+@import url(./__column/cards__column.css);
 @import url(./__title/cards__title.css);
 
 .cards {

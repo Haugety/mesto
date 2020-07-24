@@ -1,19 +1,21 @@
+import { data } from "autoprefixer";
+
 export class UserInfo {
-  constructor({ name, description }) {
-    this._name = name;
-    this._description = description;
+  constructor(data) {
+    this._data = data;
   }
 
   getUserInfo() {
-    return {
-      name: this._name.textContent,
-      description: this._description.textContent
-    }
+    return data;
   }
 
   setUserInfo(data) {
-    this._name.textContent = data.name;
-    this._description.textContent = data.description;
+    document.querySelector('.profile__title').textContent = data.name;
+    document.querySelector('.profile__subtitle').textContent = data.about;
+  }
+
+  setAvatar(data) {
+    document.querySelector('.profile__image').src = data.avatar;
   }
 
 }

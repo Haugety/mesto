@@ -18,17 +18,24 @@
     <main class="content">
 
       <section class="profile">
-        <img src="./images/avatar.jpg" alt="Аватар профиля" class="profile__avatar">
+        <div class="profile__avatar">
+          <img alt="Аватар профиля" class="profile__image">
+          <button type="button" class="profile__edit-avatar">
+            <svg class="profile__edit-avatar_icon" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M26 3.45351L6.76981 22.7932L3.33585 19.2903L22.517 0L26 3.45351ZM0 26L5.10189 24.4706L1.52075 21.0171L0 26Z" fill="white"/>
+            </svg>
+          </button>
+        </div>
         <div class="profile__info">
           <div class="profile__row">
-            <h1 class="profile__title">Жак-Ив Кусто</h1>
+            <h1 class="profile__title"></h1>
             <button type="button" class="edit-button">
               <svg class="edit-button__icon" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M10 1.328L2.604 8.767 1.283 7.419 8.66 0 10 1.328zM0 10l1.962-.588L.585 8.083 0 10z" fill="#fff"/>
               </svg>
             </button>
           </div>
-          <p class="profile__subtitle">Исследователь океана</p>
+          <p class="profile__subtitle"></p>
         </div>
         <button type="button" class="add-button">
           <svg class="add-button__icon" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -90,6 +97,28 @@
       </figure>
     </section>
 
+    <section id="avatarPopup" class="popup" >
+      <form class="popup__container popup__container_avatar" novalidate>
+        <button type="button" class="popup__close-button"></button>
+        <h3 class="popup__title">Обновить аватар</h3>
+        <fieldset class="popup__set">
+          <label class="popup__field">
+            <input type="url" placeholder="Ссылка на картинку" autocomplete="off" class="popup__input popup__input_text_link" id="link-avatar-input" name="avatarInput" required>
+            <span class="popup__input-error" id="link-avatar-input-error"></span>
+          </label>
+          <button type="submit" class="popup__save-button" disabled>Сохранить</button>
+        </fieldset>
+      </form>
+    </section>
+
+    <section id="trashPopup" class="popup" >
+      <form action="url" class="popup__container popup__container_trash">
+        <button type="button" class="popup__close-button"></button>
+        <h3 class="popup__title popup__title_trash">Вы уверены?</h3>
+        <button type="submit" class="popup__save-button">Да</button>
+      </form>
+    </section>
+
 
   </div>
 
@@ -99,7 +128,10 @@
       <button type="button" class="trash-button"></button>
       <div class="cards__row">
         <h3 class="cards__title"></h3>
-        <button type="button" class="like-button"></button>
+        <div class="cards__column">
+          <button type="button" class="like-button"></button>
+          <span class="like-button__amount">0</span>
+        </div>
       </div>
     </li>
   </template>
