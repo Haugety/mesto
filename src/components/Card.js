@@ -81,7 +81,7 @@ export class Card {
   _isLikedCheck() {
     return this._likes.some((like) => {
       return like._id === this._userId;
-    })
+    });
   }
 
   _likesStyle() {
@@ -92,7 +92,7 @@ export class Card {
 
   _deleteCard = () => {
     this._removeCard(this._cardId)
-    .then(res => {
+    .then(() => {
       this._card.remove();
       this._card = null;
     })

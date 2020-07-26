@@ -57,20 +57,7 @@ Promise.all([api.getUserInfo(), api.getInitialCards()])
     const cardSheet = new Section(
       {
         renderer: (item) => {
-          return new Card(
-            item,
-            userId,
-            '#cardsElement',
-            {
-              handleCardClick: imagePopupClass.open,
-              handleTrashButtonClick: trashPopupClass.open,
-              setHandleSubmit: trashPopupClass.setHandleSubmit,
-              removeCard: api.removeCard,
-              putLike: api.putLike,
-              removeLike: api.removeLike
-            }
-          )
-            .returnCard();
+          return createCard(item);
         }
       },
       document.querySelector('.cards')
@@ -87,11 +74,11 @@ Promise.all([api.getUserInfo(), api.getInitialCards()])
     newItemPopupClass.setEventListeners();
 
 
-    function createCard(data, cardSelector) {
-      const card = new Card(
+    function createCard(data) {
+      return new Card(
         data,
         userId,
-        cardSelector,
+        '#cardsElement',
         {
           handleCardClick: imagePopupClass.open,
           handleTrashButtonClick: trashPopupClass.open,
@@ -100,8 +87,8 @@ Promise.all([api.getUserInfo(), api.getInitialCards()])
           putLike: api.putLike,
           removeLike: api.removeLike
         }
-      );
-      return card.returnCard();
+      )
+      .returnCard();
     }
 
 
@@ -138,11 +125,7 @@ Promise.all([api.getUserInfo(), api.getInitialCards()])
     function newItemFormSubmitHandler({ placeInput: name, linkInput: link }, saveButton) {
       api.setCard({ name, link })
       .then((data) => {
-        cardSheet.addItem(
-          createCard(
-          data,
-          '#cardsElement'
-        ));
+        cardSheet.addItem(createCard(data));
       })
       .then(() => {
         saveButton.textContent = 'Создать';
