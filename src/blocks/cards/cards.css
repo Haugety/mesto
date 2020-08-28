@@ -9,7 +9,7 @@
   display: grid;
   grid-template-columns: repeat(3, calc(282 / 880 * 100%));
   justify-content: space-between;
-  grid-row-gap: calc(20 / 1280 * 100vw);
+  row-gap: calc(20 / 1280 * 100vw);
   margin-bottom: calc(66 / 880 * 100%);
 }
 
@@ -17,7 +17,7 @@
 
   .cards {
     grid-template-columns: repeat(3, 282px);
-    grid-row-gap: 20px;
+    row-gap: 20px;
     margin-bottom: 66px;
   }
 
@@ -27,7 +27,7 @@
 
   .cards {
     grid-template-columns: repeat(2, calc(325 / 676 * 100%));
-    grid-row-gap: calc(25 / 767 * 100vw);
+    row-gap: calc(25 / 767 * 100vw);
     margin-bottom: calc(48 / 282 * 100%);
   }
 
@@ -38,7 +38,7 @@
   .cards {
     grid-template-columns: 100%;
     justify-content: start;
-    grid-row-gap: calc(20 / 320 * 100vw);
+    row-gap: calc(20 / 320 * 100vw);
   }
 
 }
